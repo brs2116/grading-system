@@ -10,7 +10,7 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import CourseDetails from "./components/CourseDetails";
 import AdminPanel from "./components/AdminPanel";
-import TeacherPanel from "./components/TeacherPanel"; // ← ADD THIS LINE
+// import TeacherPanel from "./components/TeacherPanel"; // ← ADD THIS LINE
 import Privacy from "./components/Privacy";
 import Register from "./components/Register";
 import CourseRegistration from "./components/CourseRegistration";

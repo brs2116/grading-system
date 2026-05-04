@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import {
   Container,
   Row,
@@ -20,7 +20,7 @@ import Footer from "./Footer";
 
 const TeacherDashboard = () => {
   const { user, logout } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [students, setStudents] = useState([]);

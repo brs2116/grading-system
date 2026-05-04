@@ -23,9 +23,10 @@ const CourseRegistration = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  useEffect(() => {
-    loadData();
-  }, []);
+useEffect(() => {
+  loadData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   const loadData = async () => {
     setLoading(true);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
   Container,
-  Row,
-  Col,
+  // Row,
+  // Col,
   Card,
   Table,
   Button,
@@ -38,6 +38,7 @@ const AdminPanel = () => {
     if (user?.role === "admin") {
       loadData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const loadData = async () => {
