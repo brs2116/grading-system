@@ -34,6 +34,7 @@ const Dashboard = () => {
     fetchGrades();
     fetchFilteredGPA();
     fetchGPA();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSemester, selectedYear]);
 
   const fetchGrades = async () => {
