@@ -1,0 +1,44 @@
+-- Add a teacher user (password: teacher123)
+INSERT INTO users (student_id, name, email, password_hash, role) 
+VALUES ('TCH001', 'Professor Smith', 'teacher@example.com', '$2b$10$YOUR_HASH_HERE', 'teacher');
+
+
+-- Add department column to users table
+ALTER TABLE users ADD COLUMN department VARCHAR(100) DEFAULT 'General';
+
+-- Add department column to courses table
+ALTER TABLE courses ADD COLUMN department VARCHAR(100) DEFAULT 'General';
+
+-- Update existing data
+UPDATE users SET department = 'Computer Science' WHERE role = 'student';
+UPDATE courses SET department = 'Computer Science' WHERE course_code IN ('CS101', 'CS102');
+UPDATE courses SET department = 'Mathematics' WHERE course_code = 'MATH101';
+
+
+-- Get CS department ID
+SET @cs_id = (SELECT id FROM departments WHERE code = 'CS');
+
+-- Add CS courses
+INSERT IGNORE INTO courses (course_code, course_name, credits, department_id, is_available, max_students) VALUES
+('CS101', 'Introduction to Programming', 3, @cs_id, TRUE, 30),
+('CS102', 'Data Structures', 3, @cs_id, TRUE, 30),
+('CS103', 'Database Management Systems', 3, @cs_id, TRUE, 25),
+('CS104', 'Web Development', 3, @cs_id, TRUE, 30),
+('CS105', 'Object Oriented Programming', 3, @cs_id, TRUE, 30);
+
+-- Get CS department ID
+SET @cs_id = (SELECT id FROM departments WHERE code = 'CS');
+
+-- Add CS courses
+INSERT IGNORE INTO courses (course_code, course_name, credits, department_id, is_available, max_students) VALUES
+('CS101', 'Introduction to Programming', 3, @cs_id, TRUE, 30),
+('CS102', 'Data Structures', 3, @cs_id, TRUE, 30),
+('CS103', 'Database Management Systems', 3, @cs_id, TRUE, 25),
+('CS104', 'Web Development', 3, @cs_id, TRUE, 30),
+('CS105', 'Object Oriented Programming', 3, @cs_id, TRUE, 30);
+
+DB_HOST=mysql-1db7ead0-biruka414-fa58.h.aivencloud.com
+DB_PORT=26156
+DB_NAME=defaultdb
+DB_USER=avnadmin
+DB_PASSWORD=[YOUR_PASSWORD]  # Click "Reveal" to see it
