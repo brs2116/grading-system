@@ -280,7 +280,6 @@ const getCourseGradeDetails = async (req, res) => {
     res.status(500).json({ message: "Error fetching grade details" });
   }
 };
-
 // Export grades to PDF
 const exportGradesToPDF = async (req, res) => {
   try {
